@@ -8,7 +8,8 @@ export default class Feature extends React.Component {
     const options = this.props.feature.map(item => {
       const itemHash = slugify(JSON.stringify(item));
 
-      return <Option itemHash={itemHash}
+      return <Option key={itemHash}
+        itemHash={itemHash}
         item={item}
         feature={this.props.feature}
         featureName={this.props.featureName}
@@ -17,9 +18,8 @@ export default class Feature extends React.Component {
         updateFeature={this.props.updateFeature}
       />
     });
-    //features={this.props.features} selected={this.state.selected}
 
-    return (<fieldset className="feature" key={this.props.featureHash}>
+    return (<fieldset className="feature">
       <legend className="feature__name">
         <h3>{this.props.featureName}</h3>
       </legend>
