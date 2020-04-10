@@ -46,9 +46,6 @@ class App extends Component {
   };
 
   render() {
-
-
-
     return (
       <div className="App">
         <header>
@@ -57,7 +54,7 @@ class App extends Component {
         <main>
           <form className="main__form">
             <h2>Customize your laptop</h2>
-            {<Features usCurrencyFormat={USCurrencyFormat} features={this.props.features} selected={this.state.selected} />}
+            {<Features usCurrencyFormat={USCurrencyFormat} features={this.props.features} selected={this.state.selected} updateFeature={this.updateFeature} />}
           </form>
           <section className="main__summary">
             <h2>Your cart</h2>
